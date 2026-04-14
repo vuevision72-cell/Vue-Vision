@@ -1,0 +1,499 @@
+{
+  "entities": {
+    "Product": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Product",
+      "type": "object",
+      "description": "Represents a product in the eyewear catalog, such as eyeglasses, sunglasses, or contact lenses.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the product."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the product."
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed description of the product."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL of the product image.",
+          "format": "uri"
+        },
+        "price": {
+          "type": "number",
+          "description": "Price of the product."
+        },
+        "category": {
+          "type": "string",
+          "description": "Category of the product (e.g., eyeglasses, sunglasses, contact lenses)."
+        },
+        "sku": {
+          "type": "string",
+          "description": "Stock keeping unit (SKU) of the product."
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "imageUrl",
+        "price",
+        "category",
+        "sku"
+      ]
+    },
+    "LensConfiguration": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "LensConfiguration",
+      "type": "object",
+      "description": "Represents the configuration of lenses for a specific product.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the lens configuration."
+        },
+        "productId": {
+          "type": "string",
+          "description": "Reference to Product. (Relationship: Product 1:N LensConfiguration)"
+        },
+        "rxSphere": {
+          "type": "number",
+          "description": "Sphere value of the prescription."
+        },
+        "rxCylinder": {
+          "type": "number",
+          "description": "Cylinder value of the prescription."
+        },
+        "rxAxis": {
+          "type": "number",
+          "description": "Axis value of the prescription."
+        },
+        "lensType": {
+          "type": "string",
+          "description": "Type of lens (e.g., single vision, progressive)."
+        },
+        "addOns": {
+          "type": "array",
+          "description": "List of add-ons selected for the lens.",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "productId",
+        "rxSphere",
+        "rxCylinder",
+        "rxAxis",
+        "lensType"
+      ]
+    },
+    "PrescriptionValidation": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "PrescriptionValidation",
+      "type": "object",
+      "description": "Represents the validation rules for prescription values.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the prescription validation rule."
+        },
+        "parameter": {
+          "type": "string",
+          "description": "The prescription parameter being validated (e.g., sphere, cylinder, axis)."
+        },
+        "minValue": {
+          "type": "number",
+          "description": "Minimum acceptable value for the parameter."
+        },
+        "maxValue": {
+          "type": "number",
+          "description": "Maximum acceptable value for the parameter."
+        }
+      },
+      "required": [
+        "id",
+        "parameter",
+        "minValue",
+        "maxValue"
+      ]
+    },
+    "Order": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Order",
+      "type": "object",
+      "description": "Represents a customer order.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the order."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to User. (Relationship: User 1:N Order). The user who placed the order."
+        },
+        "orderDate": {
+          "type": "string",
+          "description": "Date the order was placed.",
+          "format": "date-time"
+        },
+        "totalAmount": {
+          "type": "number",
+          "description": "Total amount of the order."
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of the order (e.g., pending, processing, shipped, delivered)."
+        },
+        "shippingAddress": {
+          "type": "string",
+          "description": "Shipping address for the order."
+        },
+        "billingAddress": {
+          "type": "string",
+          "description": "Billing address for the order."
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "orderDate",
+        "totalAmount",
+        "status",
+        "shippingAddress",
+        "billingAddress"
+      ]
+    },
+    "OrderItem": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "OrderItem",
+      "type": "object",
+      "description": "Represents an item within an order.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the order item."
+        },
+        "orderId": {
+          "type": "string",
+          "description": "Reference to Order. (Relationship: Order 1:N OrderItem)"
+        },
+        "productId": {
+          "type": "string",
+          "description": "Reference to Product. (Relationship: Product 1:N OrderItem)"
+        },
+        "quantity": {
+          "type": "number",
+          "description": "Quantity of the product in the order item."
+        },
+        "price": {
+          "type": "number",
+          "description": "Price of the product at the time of the order."
+        }
+      },
+      "required": [
+        "id",
+        "orderId",
+        "productId",
+        "quantity",
+        "price"
+      ]
+    },
+    "ReturnRequest": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "ReturnRequest",
+      "type": "object",
+      "description": "Represents a request to return a product.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the return request."
+        },
+        "orderItemId": {
+          "type": "string",
+          "description": "Reference to OrderItem. (Relationship: OrderItem 1:N ReturnRequest)"
+        },
+        "reason": {
+          "type": "string",
+          "description": "Reason for the return request."
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of the return request (e.g., pending, approved, rejected)."
+        },
+        "requestDate": {
+          "type": "string",
+          "description": "Date the return request was submitted.",
+          "format": "date-time"
+        },
+        "unboxingVideoUrl": {
+          "type": "string",
+          "description": "URL of the unboxing video.",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "id",
+        "orderItemId",
+        "reason",
+        "status",
+        "requestDate"
+      ]
+    },
+    "Refund": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Refund",
+      "type": "object",
+      "description": "Represents a refund issued to a customer.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the refund."
+        },
+        "returnRequestId": {
+          "type": "string",
+          "description": "Reference to ReturnRequest. (Relationship: ReturnRequest 1:N Refund)"
+        },
+        "amount": {
+          "type": "number",
+          "description": "Amount of the refund."
+        },
+        "refundDate": {
+          "type": "string",
+          "description": "Date the refund was issued.",
+          "format": "date-time"
+        },
+        "paymentMethod": {
+          "type": "string",
+          "description": "Payment method used for the refund."
+        }
+      },
+      "required": [
+        "id",
+        "returnRequestId",
+        "amount",
+        "refundDate",
+        "paymentMethod"
+      ]
+    },
+    "User": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "User",
+      "type": "object",
+      "description": "Represents a user of the application. Note: Authentication details (e.g., passwords) should be managed by Supabase Auth and are NOT included here.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the user."
+        },
+        "firstName": {
+          "type": "string",
+          "description": "First name of the user."
+        },
+        "lastName": {
+          "type": "string",
+          "description": "Last name of the user."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the user.",
+          "format": "email"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "description": "Phone number of the user."
+        },
+        "address": {
+          "type": "string",
+          "description": "Address of the user."
+        }
+      },
+      "required": [
+        "id",
+        "firstName",
+        "lastName",
+        "email"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "products/{productId}",
+        "definition": {
+          "entityName": "Product",
+          "schema": {
+            "$ref": "#/backend/entities/Product"
+          },
+          "description": "Stores product information. Admin can read and write. All users can read.",
+          "params": [
+            {
+              "name": "productId",
+              "description": "The unique identifier of the product."
+            }
+          ]
+        }
+      },
+      {
+        "path": "products/{productId}/lensConfigurations/{lensConfigurationId}",
+        "definition": {
+          "entityName": "LensConfiguration",
+          "schema": {
+            "$ref": "#/backend/entities/LensConfiguration"
+          },
+          "description": "Stores lens configurations for a product. Admin can read and write. All users can read.",
+          "params": [
+            {
+              "name": "productId",
+              "description": "The unique identifier of the product."
+            },
+            {
+              "name": "lensConfigurationId",
+              "description": "The unique identifier of the lens configuration."
+            }
+          ]
+        }
+      },
+      {
+        "path": "prescriptionValidations/{prescriptionValidationId}",
+        "definition": {
+          "entityName": "PrescriptionValidation",
+          "schema": {
+            "$ref": "#/backend/entities/PrescriptionValidation"
+          },
+          "description": "Stores prescription validation rules. Admin only access.",
+          "params": [
+            {
+              "name": "prescriptionValidationId",
+              "description": "The unique identifier of the prescription validation rule."
+            }
+          ]
+        }
+      },
+      {
+        "path": "users/{userId}",
+        "definition": {
+          "entityName": "User",
+          "schema": {
+            "$ref": "#/backend/entities/User"
+          },
+          "description": "Stores user profiles. Only the user and admin can read and write.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            }
+          ]
+        }
+      },
+      {
+        "path": "users/{userId}/orders/{orderId}",
+        "definition": {
+          "entityName": "Order",
+          "schema": {
+            "$ref": "#/backend/entities/Order"
+          },
+          "description": "Stores user orders. Includes denormalized 'userId' for authorization independence. Only the user and admin can read and write.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            },
+            {
+              "name": "orderId",
+              "description": "The unique identifier of the order."
+            }
+          ]
+        }
+      },
+      {
+        "path": "users/{userId}/orders/{orderId}/orderItems/{orderItemId}",
+        "definition": {
+          "entityName": "OrderItem",
+          "schema": {
+            "$ref": "#/backend/entities/OrderItem"
+          },
+          "description": "Stores order items for an order. Only the user and admin can read and write.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            },
+            {
+              "name": "orderId",
+              "description": "The unique identifier of the order."
+            },
+            {
+              "name": "orderItemId",
+              "description": "The unique identifier of the order item."
+            }
+          ]
+        }
+      },
+      {
+        "path": "users/{userId}/returnRequests/{returnRequestId}",
+        "definition": {
+          "entityName": "ReturnRequest",
+          "schema": {
+            "$ref": "#/backend/entities/ReturnRequest"
+          },
+          "description": "Stores return requests for a user. Includes denormalized 'orderItemId' for authorization independence. Only the user and admin can read and write.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            },
+            {
+              "name": "returnRequestId",
+              "description": "The unique identifier of the return request."
+            }
+          ]
+        }
+      },
+      {
+        "path": "refunds/{refundId}",
+        "definition": {
+          "entityName": "Refund",
+          "schema": {
+            "$ref": "#/backend/entities/Refund"
+          },
+          "description": "Stores refund information. Admin only access.",
+          "params": [
+            {
+              "name": "refundId",
+              "description": "The unique identifier of the refund."
+            }
+          ]
+        }
+      },
+      {
+        "path": "roles_admin/{userId}",
+        "definition": {
+          "entityName": "adminRole",
+          "schema": {
+            "$ref": "#/backend/entities/User"
+          },
+          "description": "Indicates admin privileges for a user. Existence of the document grants admin rights.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to manage product catalogs, lens configurations, orders, and returns for the Zeno Pure Vision application, focusing on secure and scalable data access. The design emphasizes Authorization Independence (CRITICAL) to avoid hierarchical authorization dependencies, enables secure list operations (QAPs), and maintains data clarity and integrity.\n\n**Authorization Independence via Denormalization:**\n\n*   **Orders:** The `orders` collection stores `userId` within each document. This denormalization allows security rules to validate the user's ownership of the order without needing to perform a `get()` on a parent `users` document. This ensures atomic operations.\n*   **ReturnRequests:** The `returnRequests` collection stores `orderItemId`, removing the requirement to `get()` parent `orderItems` documents.\n\n**Structural Segregation (Homogeneous Security Posture):**\n\n*   **Products:** Stored in a top-level `products` collection. This is appropriate as all products likely have similar access control requirements (e.g., read access for all users, write access for admins).\n*   **PrescriptionValidations:** Stored in a top-level `prescriptionValidations` collection. Access is likely limited to admins, ensuring a homogeneous security posture.\n*   **Users:** The `users` collection uses path-based ownership, ensuring that only the user and admins can access user profiles.\n\n**Access Modeling (Standardization and Consistency):**\n\n*   **Private Data:** User-specific data like orders and return requests are nested under the `/users/{userId}` path, representing a `User 1:N Entity` relationship, with ownership being derived from the path itself. This eliminates the need for complex `get()` calls in security rules.\n\n**QAPs (Rules are not Filters):**\n\nThe structure supports secure `list` operations by:\n\n*   Segregating data with different access needs into separate collections (e.g., `products` which is publicly readable vs `users/{userId}/orders` which is user-specific).\n*   Using path-based ownership for user-specific data, allowing rules to efficiently filter data based on `request.auth.uid` without `get()` calls.\n\n**Admin Roles:**\n\nThe design assumes the existence of a `roles_admin` collection where documents with a UID indicate administrative privileges. This aligns with the DBAC (Database Authentication Control) principle and promotes simple security rules based on document existence rather than content.\n\nThis structure facilitates simple and robust security rules. For example, reading an order requires only checking if the `request.auth.uid` matches the `userId` stored in the order document. Creating a return request requires validating that the `orderItemId` corresponds to an order owned by the user. These checks are efficient and atomic, enabling a secure and scalable application."
+  }
+}
