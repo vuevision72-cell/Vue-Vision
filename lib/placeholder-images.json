@@ -1,0 +1,226 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-1",
+      "description": "Stylish person wearing glasses, looking thoughtfully into the distance.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/hero-1.jpg",
+      "imageHint": "stylish portrait"
+    },
+    {
+      "id": "hero-2",
+      "description": "A woman wearing fashionable glasses in an urban setting.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/hero-2.jpg",
+      "imageHint": "fashionable glasses"
+    },
+    {
+      "id": "hero-3",
+      "description": "A lifestyle shot of a person reading with glasses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/hero-3.jpg",
+      "imageHint": "lifestyle reading"
+    },
+    {
+      "id": "category-eyeglasses",
+      "description": "A collection of stylish eyeglasses on a clean background.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/category-eyeglasses.jpg",
+      "imageHint": "eyeglasses collection"
+    },
+    {
+      "id": "category-sunglasses",
+      "description": "A pair of cool sunglasses resting on a sandy beach.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/category-sunglasses.jpg",
+      "imageHint": "sunglasses beach"
+    },
+    {
+      "id": "category-kids",
+      "description": "A happy child wearing colorful glasses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/category-kids.jpg",
+      "imageHint": "child glasses"
+    },
+    {
+      "id": "category-contacts",
+      "description": "A close-up of a contact lens on a fingertip.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/category-contacts.jpg",
+      "imageHint": "contact lens"
+    },
+    {
+      "id": "offer-banner-1",
+      "description": "A stylish flat lay of various eyeglasses and accessories.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/offer-banner-1.jpg",
+      "imageHint": "eyewear fashion"
+    },
+    {
+      "id": "offer-banner-2",
+      "description": "Person working on a laptop in a modern environment, implying digital eye strain.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/offer-banner-2.jpg",
+      "imageHint": "digital work"
+    },
+    {
+      "id": "about-us-hero",
+      "description": "A diverse team of professionals collaborating in a modern, well-lit office space.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/about-us-hero.jpg",
+      "imageHint": "diverse team"
+    },
+    {
+      "id": "product-1",
+      "description": "The Classic Reader eyeglasses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/product-1.jpg",
+      "imageHint": "classic eyeglasses"
+    },
+    {
+      "id": "product-2",
+      "description": "The Minimalist Frame eyeglasses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/product-2.jpg",
+      "imageHint": "minimalist eyeglasses"
+    },
+    {
+      "id": "product-3",
+      "description": "The Aviator sunglasses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/product-3.jpg",
+      "imageHint": "aviator sunglasses"
+    },
+    {
+      "id": "product-4",
+      "description": "The Wayfarer sunglasses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/product-4.jpg",
+      "imageHint": "wayfarer sunglasses"
+    },
+    {
+      "id": "product-5",
+      "description": "Durable kids glasses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/product-5.jpg",
+      "imageHint": "kids glasses"
+    },
+    {
+      "id": "product-6",
+      "description": "Flexible kids glasses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/product-6.jpg",
+      "imageHint": "flexible eyeglasses"
+    },
+    {
+      "id": "product-7",
+      "description": "Daily disposable contact lenses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/product-7.jpg",
+      "imageHint": "contact lenses"
+    },
+    {
+      "id": "product-8",
+      "description": "Monthly contact lenses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/product-8.jpg",
+      "imageHint": "contact lens box"
+    },
+    {
+      "id": "product-9",
+      "description": "The Scholar eyeglasses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/product-9.jpg",
+      "imageHint": "round eyeglasses"
+    },
+    {
+      "id": "product-10",
+      "description": "The CEO eyeglasses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/product-10.jpg",
+      "imageHint": "rimless eyeglasses"
+    },
+    {
+      "id": "product-11",
+      "description": "Sunset sunglasses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/product-11.jpg",
+      "imageHint": "cat-eye sunglasses"
+    },
+    {
+      "id": "product-12",
+      "description": "Ocean Drive sunglasses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/product-12.jpg",
+      "imageHint": "sport sunglasses"
+    },
+    {
+      "id": "product-13",
+      "description": "Madrid tortoise shell square eyeglasses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/product-13.jpg",
+      "imageHint": "tortoise square"
+    },
+    {
+      "id": "product-14",
+      "description": "Bold oversized tortoise shell aviator eyeglasses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/product-14.jpg",
+      "imageHint": "tortoise aviator"
+    },
+    {
+      "id": "product-15",
+      "description": "Oversized retro tortoise shell eyeglasses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/product-15.jpg",
+      "imageHint": "retro tortoise"
+    },
+    {
+      "id": "product-16",
+      "description": "Transparent grey square eyeglasses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/product-16.jpg",
+      "imageHint": "transparent grey"
+    },
+    {
+      "id": "product-17",
+      "description": "Transparent blue square eyeglass frame.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/product-17.jpg",
+      "imageHint": "transparent blue"
+    },
+    {
+      "id": "brand-bausch",
+      "description": "Bausch & Lomb Logo",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/brand-bausch.png",
+      "imageHint": "logo brand"
+    },
+    {
+      "id": "brand-softlens",
+      "description": "Softlens Logo",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/brand-softlens.png",
+      "imageHint": "logo brand"
+    },
+    {
+      "id": "brand-acuvue",
+      "description": "Acuvue Logo",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/brand-acuvue.png",
+      "imageHint": "logo brand"
+    },
+    {
+      "id": "brand-alcon",
+      "description": "Alcon Logo",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/brand-alcon.png",
+      "imageHint": "logo brand"
+    },
+    {
+      "id": "kids-eyeglasses",
+      "description": "Icon of a child wearing eyeglasses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/kids-eyeglasses.png",
+      "imageHint": "kids eyeglasses"
+    },
+    {
+      "id": "kids-screen-glasses",
+      "description": "Icon of a child wearing screen glasses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/kids-screen-glasses.png",
+      "imageHint": "kids screen glasses"
+    },
+    {
+      "id": "kids-sunglasses",
+      "description": "Icon of a child wearing sunglasses.",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/kids-sunglasses.png",
+      "imageHint": "kids sunglasses"
+    },
+    {
+      "id": "gender-men",
+      "description": "Man wearing eyeglasses",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/gender-men.jpg",
+      "imageHint": "man eyeglasses"
+    },
+    {
+      "id": "gender-women",
+      "description": "Woman wearing eyeglasses",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/gender-women.jpg",
+      "imageHint": "woman eyeglasses"
+    },
+    {
+      "id": "gender-kids",
+      "description": "Kid wearing eyeglasses",
+      "imageUrl": "https://ltjrwypqlmlgppdrttcs.supabase.co/storage/v1/object/public/public_uploads/placeholder-images/gender-kids.jpg",
+      "imageHint": "kid eyeglasses"
+    }
+  ]
+}
